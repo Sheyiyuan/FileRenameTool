@@ -1,3 +1,7 @@
+// Copyright [2024] [Sheyiyuan]
+//
+// Licensed under the MIT License.
+// See the LICENSE file in the project root for more information.
 package main
 
 import (
@@ -39,8 +43,7 @@ func doCommand(args []string) {
 }
 
 func showHelp() {
-	fmt.Printf("help:")
-	fmt.Printf("Usage: %s [OPTION]... [FILE]...\n", os.Args[0])
+	fmt.Printf("File Rename Tool:\nversion:1.0.0\nrename -h\nrename --help\nModify file name (cannot directly modify extension):\nrename path/to/your/file.extension newName\nModify file extension (add '.' before new extension):\nrename path/to/your/file.extension.newExt\nAdd prefix:\nrename path/to/your/file ^pre\nAdd suffix:\nrename path/to/your/file +suf\nUse date or time as prefix/suffix:\nUse 'd'/'date' or 't'/'time'. If adding these words directly, add '' before them.")
 }
 func renameFile(from string, to string, dir string, ext string) {
 	newName := dir + "/" + to + ext
