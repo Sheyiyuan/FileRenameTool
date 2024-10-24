@@ -1,5 +1,3 @@
-以下是修改后的文档：
-
 # File Rename Tool
 
 ## Profile
@@ -14,35 +12,40 @@ E-mail: sheyiyuantan90@qq.com
 
 Github: @[Sheyiyuan](http://github.com/Sheyiyuan)
 
-## Introduction
+## Function Introduction
 
-Welcome to utilize this tool!
+### (1) Modify file name and extension
+1. Modify file name (cannot directly modify extension):
+   `rename path/to/your/file.extension newName`
+2. Modify file extension (add '.' before new extension):
+   `rename path/to/your/file.extension.newExt`
 
-### Help
-```shell
-rename -h
-rename --help
-```
-To access the help document.
+### (2) Transform file name
+1. Transform to upper case characters:
+   `rename path/to/your/file :upper,:u`
+2. Transform to lower case characters:
+   `rename path/to/your/file :lower,:l`
+3. Transform camel case to snake case:
+   `rename path/to/your/file :camel,:c`
+4. Transform snake case to snake case (possibly keeping snake case unchanged):
+   `rename path/to/your/file :snake,:s`
 
-### Modify File Name and Extension
-```shell
-rename path/to/your/file.extension newName
-```
-This command can modify your file to path/to/your/newName.extension.
+### (3) Add prefix and suffix
+1. Add prefix:
+   `rename path/to/your/file ^pre`
+2. Add suffix:
+   `rename path/to/your/file +suf`
 
-**Tip**: You cannot modify the extension using this command. For instance, if you run "rename a.txt b.md", you will obtain "b.md.txt" instead of "b.md". If you wish to modify the extension, execute the following command.
-```shell
-rename path/to/your/file.extension.newExt
-```
-This command enables you to modify the extension. Remember to input a '.' before the new extension.
+### (4) Use date or time as prefix or suffix
+When using 'd'/'date' or 't'/'time' as prefix or suffix, add '\' before them.
 
-## Add Prefix and Suffix
-```shell
-rename path/to/your/file ^pre
-rename path/to/your/file +suf
-```
-You can add a prefix and suffix by running these commands. You can use 'd'/'date' and 't'/'time' to utilize the date or time as a prefix or suffix. If you merely want to add these words, input '\\\\' before them.
+### (5) Rename by folder
+If you want to rename by folder, add '-f' as the first argument. Note that commands with "-f" will ignore all subfolders.
 
-## License
-MIT[README.md](README.md)
+## Usage
+1. View help document:
+   `rename -h,--help`
+2. Select the corresponding command according to your specific needs to perform file renaming operations.
+
+## 4. License
+This project follows the [MIT](license) license, allowing users to freely use, modify, and distribute this software under the terms of the license.

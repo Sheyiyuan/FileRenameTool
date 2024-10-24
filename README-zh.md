@@ -12,37 +12,40 @@
 
 Github：@[Sheyiyuan](http://github.com/Sheyiyuan)
 
-## 介绍
+## 功能介绍
 
-欢迎使用这个工具！
+### （一）修改文件名和扩展名
+1. 修改文件名（不能直接修改扩展名）：
+   `rename path/to/your/file.extension newName`
+2. 修改文件扩展名（在新扩展名前添加'.'）：
+   `rename path/to/your/file.extension.newExt`
 
-### 帮助
-```shell
-rename -h
-rename --help
-```
-查看帮助文档。
+### （二）转换文件名
+1. 转换为大写字符：
+   `rename path/to/your/file :upper,:u`
+2. 转换为小写字符：
+   `rename path/to/your/file :lower,:l`
+3. 驼峰命名转换为蛇形命名：
+   `rename path/to/your/file :camel,:c`
+4. 蛇形命名转换为蛇形命名（可能是保持蛇形命名不变）：
+   `rename path/to/your/file :snake,:s`
 
-### 修改文件名和扩展名
-```shell
-rename path/to/your/file.extension newName
-```
-它可以将你的文件修改为 path/to/your/newName.extension。
+### （三）添加前缀后缀
+1. 添加前缀：
+   `rename path/to/your/file ^pre`
+2. 添加后缀：
+   `rename path/to/your/file +suf`
 
-**提示**：你不能通过这个命令修改扩展名。例如，如果你运行“rename a.txt b.md”，你将得到“b.md.txt”而不是“b.md”。如果你想修改扩展名，应该运行下一个命令。
-```shell
-rename path/to/your/file.extension.newExt
-```
-这个命令可以修改扩展名。你应该在新扩展名前加上一个“.”。
+### （四）使用日期或时间作为前缀后缀
+使用'd'/'date'或't'/'time'作为前缀后缀时，需在前面添加'\\'。
 
-## 添加前缀和后缀
-```shell
-rename path/to/your/file ^pre
-rename path/to/your/file +suf
-```
-你可以通过运行这个命令添加前缀和后缀。
+### （五）按文件夹重命名
+如果要按文件夹进行重命名操作，可在命令开头添加'-f'参数。但需注意，带有'-f'参数的命令将忽略所有子文件夹。
 
-你可以使用“d”/“date”和“t”/“time”来使用日期或时间作为前缀/后缀。如果你只是想添加这些单词，在它们前面输入“\\”。
+## 使用方法
+1. 查看帮助文档：
+   `rename -h,--help`
+2. 根据具体需求选择上述相应的命令进行文件重命名操作。
 
 ## 许可证
-MIT 许可证。
+本项目遵循 [MIT](license) 许可证，允许用户在遵循许可证条款的前提下自由使用、修改和分发本软件。
